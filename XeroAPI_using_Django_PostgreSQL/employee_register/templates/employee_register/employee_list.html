@@ -1,0 +1,106 @@
+{% extends "employee_register/base.html" %}
+
+{% block content %}
+
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Itype</td>
+            <td>contact</td>
+            <td>line_items</td>
+            <td>date</td>
+            <td>due_date</td>
+            <td>invoice_number</td>
+            <td>reference</td>
+            <td>branding_theme_id</td>
+            <td>url</td>
+            <td>currency_rate</td>
+            <td>status</td>
+            <td>sent_to_contact</td>
+            <td>expected_payment_date</td>
+            <td>planned_payment_date</td>
+            <td>cis_deduction</td>
+            <td>sub_total</td>
+            <td>total_tax</td>
+            <td>total</td>
+            <td>total_discount</td>
+            <td>invoice_id</td>
+            <td>has_attachments</td>
+            <td>is_discounted</td>
+            <td>payments</td>
+            <td>prepayments</td>
+            <td>overpayments</td>
+            <td>amount_due</td>
+            <td>amount_paid</td>
+            <td>fully_paid_on_date</td>
+            <td>amount_credited</td>
+            <td>updated_date_utc</td>
+            <td>attachments</td>
+            <td>has_errors</td>
+            <td>status_attribute_string</td>
+            <td>validation_errors</td>
+            <td>warnings</td>
+            <td>
+                <a href="{% url 'employee_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> Add New
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employee_list %}
+            <tr>
+                <td>{{employee.Itype}}</td>
+                <td>{{employee.contact}}</td>
+                <td>{{employee.line_items}}</td>
+                <td>{{employee.date}}</td>
+                <td>{{employee.due_date}}</td>
+                <td>{{employee.invoice_number}}</td>
+                <td>{{employee.reference}}</td>
+                <td>{{employee.branding_theme_id}}</td>
+                <td>{{employee.url}}</td>
+                <td>{{employee.currency_rate}}</td>
+                <td>{{employee.status}}</td>
+                <td>{{employee.sent_to_contact}}</td>
+                <td>{{employee.expected_payment_date}}</td>
+                <td>{{employee.planned_payment_date}}</td>
+                <td>{{employee.cis_deduction}}</td>
+                <td>{{employee.sub_total}}</td>
+                <td>{{employee.total_tax}}</td>
+                <td>{{employee.total}}</td>
+                <td>{{employee.total_discount}}</td>
+                <td>{{employee.invoice_id}}</td>
+                <td>{{employee.has_attachments}}</td>
+                <td>{{employee.is_discounted}}</td>
+                <td>{{employee.payments}}</td>
+                <td>{{employee.prepayments}}</td>
+                <td>{{employee.overpayments}}</td>
+                <td>{{employee.amount_due}}</td>
+                <td>{{employee.amount_paid}}</td>
+                <td>{{employee.fully_paid_on_date}}</td>
+                <td>{{employee.amount_credited}}</td>
+                <td>{{employee.updated_date_utc}}</td>
+                <td>{{employee.attachments}}</td>
+                <td>{{employee.has_errors}}</td>
+                <td>{{employee.status_attribute_string}}</td>
+                <td>{{employee.validation_errors}}</td>
+                <td>{{employee.warnings}}</td>
+                <td>
+                    <a href="{% url 'employee_update' employee.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                    <form action="{% url 'employee_delete' employee.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+{% endblock content %}

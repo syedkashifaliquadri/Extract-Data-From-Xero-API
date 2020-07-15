@@ -1,0 +1,55 @@
+{% extends "employee_register/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="" method="POST" autocomplete="off">
+    {%csrf_token%}
+    {{form.Itype|as_crispy_field}}
+    {{form.contact|as_crispy_field}}
+    {{form.line_items|as_crispy_field}}
+    {{form.date|as_crispy_field}}
+    {{form.due_date|as_crispy_field}}
+    {{form.invoice_number|as_crispy_field}}
+    {{form.reference|as_crispy_field}}
+    {{form.branding_theme_id|as_crispy_field}}
+    {{form.url|as_crispy_field}}
+    {{form.currency_rate|as_crispy_field}}
+    {{form.status|as_crispy_field}}
+    {{form.sent_to_contact|as_crispy_field}}
+    {{form.expected_payment_date|as_crispy_field}}
+    {{form.planned_payment_date|as_crispy_field}}
+    {{form.cis_deduction|as_crispy_field}}
+    {{form.sub_total|as_crispy_field}}
+    {{form.total_tax|as_crispy_field}}
+    {{form.total|as_crispy_field}}
+    {{form.total_discount|as_crispy_field}}
+    {{form.invoice_id|as_crispy_field}}
+    {{form.has_attachments|as_crispy_field}}
+    {{form.is_discounted|as_crispy_field}}
+    {{form.payments|as_crispy_field}}
+    {{form.prepayments|as_crispy_field}}
+    {{form.overpayments|as_crispy_field}}
+    {{form.amount_due|as_crispy_field}}
+    {{form.amount_paid|as_crispy_field}}
+    {{form.fully_paid_on_date|as_crispy_field}}
+    {{form.amount_credited|as_crispy_field}}
+    {{form.updated_date_utc|as_crispy_field}}
+    {{form.attachments|as_crispy_field}}
+    {{form.has_errors|as_crispy_field}}
+    {{form.status_attribute_string|as_crispy_field}}
+    {{form.validation_errors|as_crispy_field}}
+    {{form.warnings|as_crispy_field}}
+
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                Submit</button>
+        </div>
+
+    <div class="col-md-4">
+        <a href="{% url 'employee_list' %}" class="btn btn-secondary btn-block btn-lg">
+            <i class="fas fa-stream"></i> Back to list
+        </a>
+    </div>
+</form>
+{% endblock content %}
