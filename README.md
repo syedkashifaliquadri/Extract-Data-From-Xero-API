@@ -112,3 +112,15 @@ Name | Type | Description | Notes
 **validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays validation errors returned from the API | [optional] 
 **has_validation_errors** | **bool** | A boolean to indicate if a contact has an validation errors | [optional] [default to False]
 **status_attribute_string** | **str** | Status of object | [optional] 
+
+<h3>Database</h3>
+We are using python Web Framework is called Django AND database use PostgreSQL.
+
+<div>
+    <img src="https://miro.medium.com/max/1400/1*nuffgrRc5rPpkBC8areg9A.png" width="800" height="300">
+</div>  
+
+<h3>Documentation and Research</h3>
+
+https://developer.xero.com/documentation/oauth2/auth-flow
+https://www.youtube.com/results?search_query=xero+api+extract+data
